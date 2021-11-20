@@ -11,6 +11,11 @@ var taskFormHandler = function(e) {
         type: taskTypeInput
     };
 
+    if (!taskNameInput || !taskTypeInput) {
+        alert("You need to fill out the task form!");
+        return false;
+    }
+
     createTaskEl(taskDataObj);
 
     var listItemEl = document.createElement("li");
