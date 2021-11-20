@@ -88,4 +88,9 @@ var createtaskActions = function(taskId) {
 }
 
 formEl.addEventListener("submit", taskFormHandler);
-pageContentEl.addEventListener("click", taskbuttonHandler);
+
+var taskButtonHandler = function(event) {
+    console.log(event.target)
+}
+
+pageContentEl.addEventListener("click", taskButtonHandler);
