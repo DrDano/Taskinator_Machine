@@ -222,6 +222,10 @@ footer {
 }
 
 @media screen and (max-width: 980px) {
+  main {
+    flex-direction: column;
+  }
+
   form .form-group {
     flex: 1 100%;
   }
