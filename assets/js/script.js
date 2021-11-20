@@ -60,6 +60,27 @@ var createtaskActions = function(taskId) {
     deleteButtonEl.setAttribute("data-task-id", taskId)
 
     actionContainerEl.appendChild(deleteButtonEl);
+
+    var statusSelectEl = document.createElement("select");
+    statusSelectEl.className = "select-status";
+    statusSelectEl.setAttribute("name", "status-change");
+    statusSelectEl.setAttribute("data-task-id", taskId);
+
+    var statusChoices = ["To Do", "In Progress", "Completed"];
+    for (var i = 0; i < statusChoices.length; i++) {
+        // create option element
+        var statusOptionEl = document.createElement("option");
+        statusOptionEl.textContent = statusChoices[i];
+        statusOptionEl.setAttribute("value", statusChoices[i]);
+      
+        // append to select
+        statusSelectEl.appendChild(statusOptionEl);
+      }
+      
+
+    actionContainerEl.appendChild(statusSelectEl);
+
+    return actionContainerEl;
 }
 
 formEl.addEventListener("submit", taskFormHandler);
