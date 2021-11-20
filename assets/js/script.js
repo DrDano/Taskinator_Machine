@@ -16,6 +16,8 @@ var taskFormHandler = function(e) {
         return false;
     }
 
+    formEl.reset();
+
     createTaskEl(taskDataObj);
 
     var listItemEl = document.createElement("li");
