@@ -21,6 +21,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+main {
+  display: flex;
+  align-items: center;
+}
+
 header {
   background: var(--secondary);
   padding: 30px 25px;
