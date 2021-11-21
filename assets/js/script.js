@@ -4,7 +4,12 @@ var taskIdCounter = 0;
 var pageContentEl = document.querySelector("#page-content");
 
 var completeEditTask = function(taskName, taskType, taskId) {
-    console.log(taskName, taskType, taskId);
+    var taskSelected = document.queryselector(".task-item[data-task-id='" + taskId + "']");
+
+    taskSelected.querySelector("h3.task-name").textContent = taskName;
+    taskSelected.querySelector("span.task-type").textContent = taskType;
+
+    alert("Task Updated!")
 }
 
 var taskFormHandler = function(e) {
