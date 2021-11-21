@@ -11,6 +11,15 @@ var completeEditTask = function(taskName, taskType, taskId) {
 
     taskSelected.querySelector("h3.task-name").textContent = taskName;
     taskSelected.querySelector("span.task-type").textContent = taskType;
+    
+    // loop through tasks array and task object with new textContent
+    for (var i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === parseInt(taskId)) {
+            tasks[i].name = taskName;
+            tasks[i].type = taskType;
+            }
+        };
+    
 
     alert("Task Updated!")
 
@@ -77,8 +86,6 @@ var createTaskEl = function(taskDataObj) {
     tasks.push(taskDataObj);
 
     taskIdCounter++;
-    console.log(taskDataObj);
-    console.log(taskDataObj.status);
 }
 
 var createTaskActions = function(taskId) {
