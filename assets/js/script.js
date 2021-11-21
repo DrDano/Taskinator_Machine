@@ -68,7 +68,7 @@ var createTaskEl = function(taskDataObj) {
     taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
 
     listItemEl.appendChild(taskInfoEl);
-    var taskActionsEl = createtaskActions(taskIdCounter)
+    var taskActionsEl = createTaskActions(taskIdCounter)
     listItemEl.appendChild(taskActionsEl);
 
     tasksToDoEl.appendChild(listItemEl);
@@ -81,7 +81,7 @@ var createTaskEl = function(taskDataObj) {
     console.log(taskDataObj.status);
 }
 
-var createtaskActions = function(taskId) {
+var createTaskActions = function(taskId) {
     var actionContainerEl = document.createElement("div");
     actionContainerEl.className = "task-actions";
 
