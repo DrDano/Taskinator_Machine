@@ -4,7 +4,7 @@ var taskIdCounter = 0;
 var pageContentEl = document.querySelector("#page-content");
 
 var completeEditTask = function(taskName, taskType, taskId) {
-    var taskSelected = document.queryselector(".task-item[data-task-id='" + taskId + "']");
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
 
     taskSelected.querySelector("h3.task-name").textContent = taskName;
     taskSelected.querySelector("span.task-type").textContent = taskType;
@@ -12,7 +12,7 @@ var completeEditTask = function(taskName, taskType, taskId) {
     alert("Task Updated!")
 
     formEl.removeAttribute("data-task-id");
-    document.queryselector("#save-task").textContent = "Add Task";
+    document.querySelector("#save-task").textContent = "Add Task";
 }
 
 var taskFormHandler = function(e) {
