@@ -94,11 +94,22 @@ var deleteTask = function(taskId) {
     taskSelected.remove();
 };
 
-var taskButtonHandler = function(event) {
-    console.log(event.target);
+var editTask = function(taskId) {
+    console.log("editing task #" + taskId);
 
-    if (event.target.matches(".delete-btn")) {
-        var taskId = event.target.getAttribute("data-task-id");
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+}
+
+var taskButtonHandler = function(event) {
+    var targetEl = event.target;
+
+    if (targetEl.matches(".edit-btn")) {
+        var taskId = targetEl.getAttribute("data-task-id");
+        editTask(taskId);
+    }
+
+    else if (targetEl.matches(".delete-btn")) {
+        var taskId = targetEl.getAttribute("data-task-id");
         deleteTask(taskId);
     }
 };
