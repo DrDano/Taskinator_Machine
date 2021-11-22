@@ -216,14 +216,31 @@ var saveTasks = function() {
 
 loadTasks = function(tasks) {
     newTasks = localStorage.getItem("tasks");
-    console.log(newTasks);
 
     if (tasks === null) {
         tasks = [];
         return false;
     }
 
-    tasks = JSON.parse(tasks);
+    tasks = JSON.parse(newTasks);
+
+    for (let i = 0; i < tasks.length; i++) {
+        tasks[i].id = taskIdCounter;
+        console.log(tasks[i])
+
+        var listitemEl = document.createElement("li");
+        listitemEl.className = "task-item";
+        listitemEl.setAttribute("data-task-id", tasks[i].id)
+
+        var taskInfoEl = document.createElement("div")
+        taskInfoEl.className = "task-info"
+        taskInfoEl.innerHTML = "<h3 class='task-name'>" + tasks[i].name + "</h3><span class='task-type'>" + tasks[i].type + "</span>";
+        
+        listitemEl.appendChild(listitemEl);
+
+        var taskActionsEl = createTaskActions(tasks[i].id)
+        listitemEl.append(taskActionsEl)
+    }
 }
 
 loadTasks(tasks);
