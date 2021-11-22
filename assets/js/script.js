@@ -215,6 +215,7 @@ var saveTasks = function() {
 // iterate through the tasks array and create task elements on the page from it
 
 loadTasks = function(tasks) {
+    debugger;
 
     newTasks = localStorage.getItem("tasks");
 
@@ -242,13 +243,13 @@ loadTasks = function(tasks) {
         listItemEl.append(taskActionsEl)
 
         if (tasks[i].status === "to do") {
-            listItemEl.querySelector("select[name='status-change'").selectedIndex = 0
+            listItemEl.querySelector("select[name='status-change']").selectedIndex = 0
 
             tasksToDoEl.appendChild(listItemEl)
         }
 
-        else if (tasks[i].status === "in-progress") {
-            listItemEl.querySelector("select[name='status-change'").selectedIndex = 1
+        else if (tasks[i].status === "in progress") {
+            listItemEl.querySelector("select[name='status-change']").selectedIndex = 1
 
             tasksInProgressEl.appendChild(listItemEl)
         }
@@ -261,7 +262,6 @@ loadTasks = function(tasks) {
 
         taskIdCounter++
 
-        console.log(listItemEl)
     }
 }
 
