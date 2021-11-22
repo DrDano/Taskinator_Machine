@@ -220,6 +220,11 @@ loadTasks = function(tasks) {
 
     tasks = JSON.parse(newTasks);
 
+    if (tasks === null) {
+        tasks = [];
+        return false;
+    }
+
     for (let i = 0; i < tasks.length; i++) {
         tasks[i].id = taskIdCounter;
 
