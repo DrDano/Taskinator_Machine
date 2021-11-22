@@ -180,6 +180,7 @@ var taskButtonHandler = function(event) {
 };
 
 var taskStatusChangeHandler = function(event) {
+    debugger;
     var taskId = event.target.getAttribute("data-task-id");
 
     var statusValue = event.target.value.toLowerCase();
@@ -206,16 +207,11 @@ var taskStatusChangeHandler = function(event) {
 
 };
 
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks)); 
-}
-
 // get tasks from localStorage
 // convert tasks from the string format back into an array of objects
 // iterate through the tasks array and create task elements on the page from it
 
 loadTasks = function(tasks) {
-    debugger;
 
     newTasks = localStorage.getItem("tasks");
 
@@ -265,7 +261,12 @@ loadTasks = function(tasks) {
     }
 }
 
+var saveTasks = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 loadTasks(tasks)
+
 
 
 pageContentEl.addEventListener("click", taskButtonHandler);
