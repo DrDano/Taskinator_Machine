@@ -180,7 +180,7 @@ var taskButtonHandler = function(event) {
 };
 
 var taskStatusChangeHandler = function(event) {
-    debugger;
+    
     var taskId = event.target.getAttribute("data-task-id");
 
     var statusValue = event.target.value.toLowerCase();
@@ -211,7 +211,7 @@ var taskStatusChangeHandler = function(event) {
 // convert tasks from the string format back into an array of objects
 // iterate through the tasks array and create task elements on the page from it
 
-loadTasks = function(tasks) {
+var loadTasks = function() {
 
     newTasks = localStorage.getItem("tasks");
 
@@ -250,7 +250,7 @@ loadTasks = function(tasks) {
             tasksInProgressEl.appendChild(listItemEl)
         }
 
-        else if (tasks[i].status === "complete") {
+        else if (tasks[i].status === "completed") {
             listItemEl.querySelector("select[name='status-change']").selectedIndex = 2
 
             tasksCompletedEl.appendChild(listItemEl)
